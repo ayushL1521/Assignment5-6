@@ -1,0 +1,73 @@
+<!-- STUDENT NAME: AYUSH LATHIYA
+STUDENT ID: C0885207-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Car Race Simulation</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Car Race Simulation</h1>
+  <div id="output"></div>
+
+  <script>
+    class Car {
+      constructor(brand, model, year, color, price, gas) {
+        this.brand = brand;
+        this.model = model;
+        this.year = year;
+        this.color = color;
+        this.price = price;
+        this.gas = gas;
+      }
+
+      honk() {
+        console.log("Tuut tuut");
+        console.log(`Brand: ${this.brand}`);
+        console.log(`Model: ${this.model}`);
+        console.log(`Year: ${this.year}`);
+        console.log(`Color: ${this.color}`);
+        console.log(`Price: ${this.price}`);
+      }
+
+      raceTurns(turns) {
+        const currentYear = new Date().getFullYear();
+        const outputDiv = document.getElementById('output');
+        let outputHTML = '';
+
+        outputHTML += `<h2>${this.brand} ${this.model}</h2>`;
+        this.honk();
+        outputHTML += '<br>';
+
+        for (let turn = 1; turn <= turns; turn++) {
+          this.gas -= this.year === currentYear ? 5 : (5 + (currentYear - this.year));
+          outputHTML += `--- Turn ${turn} ---<br>`;
+          outputHTML += `Remaining gas: ${this.gas} liters<br>`;
+        }
+
+        outputHTML += '<br>';
+        outputDiv.innerHTML += outputHTML;
+      }
+    }
+
+    // Create car objects
+    const car1 = new Car("Honda", "CR-V", 2023, "Red", 50000, 45);
+    const car2 = new Car("Ford", "F-150", 2020, "Black", 25000, 30);
+    const car3 = new Car("BMW", "X5", 2022, "Green", 60000, 65);
+    const car4 = new Car("Mazda", "CX-5", 2019, "White", 15000, 60);
+    const car5 = new Car("Audi", "Q7", 2018, "Silver", 52000, 47);
+    const car6 = new Car("Kia", "Forte", 2020, "Blue", 21000, 56);
+
+    // Simulate race turns for each car
+    const raceTurns = 7;
+    car1.raceTurns(raceTurns);
+    car2.raceTurns(raceTurns);
+    car3.raceTurns(raceTurns);
+    car4.raceTurns(raceTurns);
+    car5.raceTurns(raceTurns);
+    car6.raceTurns(raceTurns);
+  </script>
+</body>
+</html>

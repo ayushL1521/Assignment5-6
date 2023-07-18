@@ -1,0 +1,46 @@
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f0f0f0;
+  }
+  
+  h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .car-container {
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: #fff;
+  }
+  
+  .car-brand {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #007BFF;
+  }
+  
+  .car-model {
+    font-size: 1.1rem;
+    color: #333;
+  }
+  
+  .car-details {
+    margin-top: 10px;
+    color: #666;
+  }
+  
+  .car-gas {
+    font-weight: bold;
+  }
+  
+  #output {
+    margin-top: 20px;
+  }
+  
